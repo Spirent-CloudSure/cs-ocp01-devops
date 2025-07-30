@@ -1,0 +1,49 @@
+---
+- name: Creating hosts file
+  hosts: service
+  tasks:
+    - name: copy file via template
+      template:
+        src: hosts.j2
+        dest: /etc/hosts
+
+- name: Time Synchronize on service node
+  hosts: service
+  vars:
+    timesync_ntp_servers:
+      - hostname: bastion.ocp4.example.com
+        iburst: yes
+  roles:
+    - rhel-system-roles.timesync
+
+- name: Install nfs-server on service. 
+  hosts: service 
+  roles: 
+    - nfs-server
+
+- name: Setting Selinux Permissive for all node. 
+  hosts: service
+  ignore_errors: true
+  vars: 
+    selinux_state: permissive 
+  roles: 
+    - role: rhel-system-roles.selinux
+      become: true
+
+- name: Install and Configure DNS
+  gather_facts: true
+  ignore_errors: true 
+  hosts: service 
+  roles: 
+    - dns-server
+
+- name: Install and Configure Apache HTTP Server
+  hosts: service 
+  become: true
+  roles:
+    - apache
+
+- name: Install DHCP Configure Server
+  hosts: service 
+  roles: 
+    - dhcp-server

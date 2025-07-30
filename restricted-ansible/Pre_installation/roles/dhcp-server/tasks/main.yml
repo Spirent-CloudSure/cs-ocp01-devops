@@ -1,0 +1,16 @@
+- name: Install DHCP server
+  ansible.builtin.package:
+    name: "{{ 'dhcp-server' if ansible_os_family == 'RedHat' else 'isc-dhcp-server' }}"
+    state: present
+
+- name: Deploy dhcpd.conf
+  ansible.builtin.template:
+    src: dhcpd.conf.j2
+    dest: /etc/dhcp/dhcpd.conf
+  notify: Restart DHCP
+
+- name: Enable and start DHCP service
+  ansible.builtin.service:
+    name: "{{ 'dhcpd' if ansible_os_family == 'RedHat' else 'isc-dhcp-server' }}"
+    state: started
+    enabled: yes

@@ -1,0 +1,24 @@
+$TTL 1D
+@	IN SOA	root.ocp01.plano.spirentcom.com. bastion.ocp01.plano.spirentcom.com. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+@	IN	NS	bastion.ocp01.plano.spirentcom.com.
+@	IN	A	10.224.225.20
+bastion.ocp01.plano.spirentcom.com.	IN	A	10.224.225.20
+registry.ocp01.plano.spirentcom.com.	IN	A	10.224.225.21
+ceph01.ocp01.plano.spirentcom.com.	IN	A	172.19.5.1
+ceph02.ocp01.plano.spirentcom.com.	IN	A	172.19.5.2
+ceph03.ocp01.plano.spirentcom.com.	IN	A	172.19.5.3
+bootstrap.ocp01.plano.spirentcom.com.	IN	A	10.224.225.11
+master1.ocp01.plano.spirentcom.com.	IN	A	10.224.225.1
+master2.ocp01.plano.spirentcom.com.	IN	A	10.224.225.2
+master3.ocp01.plano.spirentcom.com.	IN	A       10.224.225.3
+worker1.ocp01.plano.spirentcom.com.	IN	A	10.224.225.4
+worker2.ocp01.plano.spirentcom.com.	IN	A	10.224.225.5
+worker3..ocp01.plano.spirentcom.com.	IN	A	10.224.225.6
+api..ocp01.plano.spirentcom.com.	IN	A	10.224.225.7
+api-int.ocp01.plano.spirentcom.com.	IN	A	10.224.225.7
+*.apps..ocp01.plano.spirentcom.com.	IN	A	10.224.225.8

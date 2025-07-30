@@ -1,0 +1,6 @@
+---
+- name: webserve
+  hosts: service
+  roles: 
+    - apache
+ 

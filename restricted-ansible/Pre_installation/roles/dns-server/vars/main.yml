@@ -1,0 +1,13 @@
+---
+dns_pkg:
+  - bind 
+  - bind-utils 
+dns_svc: named 
+dns_path: /var/named
+dns_conf: /etc/named.conf
+dns_fw: dns 
+domain: ocp01.plano.spirentcom.com.
+rdomain: 10.224.225.20
+zone_files: 
+  - /home/student/ansible/pre_check/dns-server/forward.zone.j2
+  - /home/student/ansible/pre_check/dns-server/reverse.zone.j2

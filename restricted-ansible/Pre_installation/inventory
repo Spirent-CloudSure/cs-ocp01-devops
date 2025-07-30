@@ -1,0 +1,16 @@
+[service]
+dhcp-node ansible_host=bastion.ocp4.example.com  ansible_user=student ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+
+[registry]
+registry.ocp4.example.com 
+
+[bootstrap]
+bootstrap.ocp4.example.com
+[ctrlnode]
+master1.ocp4.example.com
+master2.ocp4.example.com
+master3.ocp4.example.com
+[wkrnode]
+worker1.ocp4.example.com
+worker2.ocp4.example.com

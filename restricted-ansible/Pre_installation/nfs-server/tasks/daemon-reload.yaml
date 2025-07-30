@@ -1,0 +1,8 @@
+---
+- name: Reload systemd daemon 
+  ansible.builtin.command: systemctl daemon-reexec 
+  become: true
+- name: running mount command 
+  ansible.builtin.systemd:
+    daemon_reload: yes 
+  become: yes 

@@ -1,0 +1,14 @@
+---
+firewall_services:
+  - name: dns
+    state: enabled
+
+firewall_ports:
+  - port: 53/tcp
+    state: enabled
+  - port: 53/udp
+    state: enabled
+
+firewall_state: started
+firewall_enabled: true
+

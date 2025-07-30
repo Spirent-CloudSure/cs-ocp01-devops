@@ -1,0 +1,8 @@
+---
+nfs_pkg: "nfs-utils" 
+nfs_svc: "nfs-server" 
+nfsdir: "/nfs-server" 
+nfsown: "nobody"
+exp_dir: "/etc/exports" 
+mpath: "/mnt" 
+
