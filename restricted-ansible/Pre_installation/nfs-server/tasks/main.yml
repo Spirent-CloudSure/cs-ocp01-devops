@@ -1,7 +1,0 @@
----
-- name: Checking Prerequisite usage. 
-  import_tasks: usage.yaml 
-- name: Install nfs server 
-  import_tasks: nfs-server.yaml 
-- name: Reload daemon servie 
-  import_tasks: daemon-reload.yaml

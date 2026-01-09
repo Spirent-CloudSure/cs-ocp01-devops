@@ -1,6 +1,0 @@
----
-# handlers file for dns-server
-- name: Restart DNS Service
-  service:
-    name: "{{ dns_svc }}"
-    state: restarted

@@ -1,6 +1,0 @@
----
-- name: Restart DHCP
-  ansible.builtin.service:
-    name: "{{ 'dhcpd' if ansible_os_family == 'RedHat' else 'isc-dhcp-server' }}"
-    state: restarted
-
